@@ -1,0 +1,116 @@
+[32] pry(main)> a=[1,2,3,4]
+=> [1, 2, 3, 4]
+[33] pry(main)> a.join
+=> "1234"
+[34] pry(main)> a
+=> [1, 2, 3, 4]
+[35] pry(main)> race_array = ["Abricot du Laudot", "Black Caviar", "Brigadier Gerard"]
+=> ["Abricot du Laudot", "Black Caviar", "Brigadier Gerard"]
+[36] pry(main)> race_array.map!.with_index { |horse, index| horse = "#{index+1} - #{horse}" }
+=> ["1 - Abricot du Laudot", "2 - Black Caviar", "3 - Brigadier Gerard"]
+[37] pry(main)> race_array.reverse! 
+=> ["3 - Brigadier Gerard", "2 - Black Caviar", "1 - Abricot du Laudot"]
+[38] pry(main)> exit
+➜  06-Destructive-Methods git:(master) ✗ rake
+rubocop --format simple || true
+== lib/horse_racing.rb ==
+W:  3: 47: Lint/UselessAssignment: Useless assignment to variable - horse.
+
+1 file inspected, 1 offense detected
+/Users/francoislillet/.rbenv/versions/3.1.2/bin/ruby -I/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-support-3.11.1/lib:/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib /Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
+
+#horse_racing_format!
+  should modify its parameter (destructively)
+  should follow the horse racing formatting style (FAILED - 1)
+
+Failures:
+
+  1) #horse_racing_format! should follow the horse racing formatting style
+     Failure/Error: expect(horse_race).to eq ["4-Brigadier Gerard!", "3-Coup de Folie!", "2-Black Caviar!", "1-Abricot du Laudot!"]
+     
+       expected: ["4-Brigadier Gerard!", "3-Coup de Folie!", "2-Black Caviar!", "1-Abricot du Laudot!"]
+            got: ["4 - Brigadier Gerard", "3 - Coup de Folie", "2 - Black Caviar", "1 - Abricot du Laudot"]
+     
+       (compared using ==)
+     # ./spec/horse_racing_spec.rb:15:in `block (2 levels) in <top (required)>'
+
+Finished in 0.00599 seconds (files took 0.04978 seconds to load)
+2 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/horse_racing_spec.rb:12 # #horse_racing_format! should follow the horse racing formatting style
+
+/Users/francoislillet/.rbenv/versions/3.1.2/bin/ruby -I/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-support-3.11.1/lib:/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib /Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb failed
+➜  06-Destructive-Methods git:(master) ✗ rake
+rubocop --format simple || true
+
+1 file inspected, no offenses detected
+/Users/francoislillet/.rbenv/versions/3.1.2/bin/ruby -I/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-support-3.11.1/lib:/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib /Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
+
+#horse_racing_format!
+  should modify its parameter (destructively)
+  should follow the horse racing formatting style (FAILED - 1)
+
+Failures:
+
+  1) #horse_racing_format! should follow the horse racing formatting style
+     Failure/Error: expect(horse_race).to eq ["4-Brigadier Gerard!", "3-Coup de Folie!", "2-Black Caviar!", "1-Abricot du Laudot!"]
+     
+       expected: ["4-Brigadier Gerard!", "3-Coup de Folie!", "2-Black Caviar!", "1-Abricot du Laudot!"]
+            got: ["4-Brigadier Gerard", "3-Coup de Folie", "2-Black Caviar", "1-Abricot du Laudot"]
+     
+       (compared using ==)
+     # ./spec/horse_racing_spec.rb:15:in `block (2 levels) in <top (required)>'
+
+Finished in 0.00591 seconds (files took 0.04924 seconds to load)
+2 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/horse_racing_spec.rb:12 # #horse_racing_format! should follow the horse racing formatting style
+
+/Users/francoislillet/.rbenv/versions/3.1.2/bin/ruby -I/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-support-3.11.1/lib:/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib /Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb failed
+➜  06-Destructive-Methods git:(master) ✗ rake
+rubocop --format simple || true
+
+1 file inspected, no offenses detected
+/Users/francoislillet/.rbenv/versions/3.1.2/bin/ruby -I/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-support-3.11.1/lib:/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib /Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
+
+#horse_racing_format!
+  should modify its parameter (destructively)
+  should follow the horse racing formatting style (FAILED - 1)
+
+Failures:
+
+  1) #horse_racing_format! should follow the horse racing formatting style
+     Failure/Error: expect(horse_race).to eq ["4-Brigadier Gerard!", "3-Coup de Folie!", "2-Black Caviar!", "1-Abricot du Laudot!"]
+     
+       expected: ["4-Brigadier Gerard!", "3-Coup de Folie!", "2-Black Caviar!", "1-Abricot du Laudot!"]
+            got: ["4-Brigadier Gerard", "3-Coup de Folie", "2-Black Caviar", "1-Abricot du Laudot"]
+     
+       (compared using ==)
+     # ./spec/horse_racing_spec.rb:15:in `block (2 levels) in <top (required)>'
+
+Finished in 0.00596 seconds (files took 0.04959 seconds to load)
+2 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/horse_racing_spec.rb:12 # #horse_racing_format! should follow the horse racing formatting style
+
+/Users/francoislillet/.rbenv/versions/3.1.2/bin/ruby -I/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-support-3.11.1/lib:/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib /Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb failed
+➜  06-Destructive-Methods git:(master) ✗ rake
+rubocop --format simple || true
+
+1 file inspected, no offenses detected
+/Users/francoislillet/.rbenv/versions/3.1.2/bin/ruby -I/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-support-3.11.1/lib:/Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib /Users/francoislillet/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
+
+#horse_racing_format!
+  should modify its parameter (destructively)
+  should follow the horse racing formatting style
+
+Finished in 0.00084 seconds (files took 0.04928 seconds to load)
+2 examples, 0 failures
+
+➜  06-Destructive-Methods git:(master) ✗ 
